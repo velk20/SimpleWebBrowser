@@ -1,0 +1,10 @@
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\bin\Debug\WebBrowser.exe.config
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\bin\Debug\WebBrowser.exe
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\bin\Debug\WebBrowser.pdb
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.csprojAssemblyReference.cache
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.Properties.Resources.resources
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.csproj.GenerateResource.cache
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.csproj.CoreCompileInputs.cache
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.exe
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.pdb
+C:\Users\angel\Desktop\WebBrowser\WebBrowser\obj\Debug\WebBrowser.WebBrowserForm.resources
