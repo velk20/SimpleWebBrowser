@@ -80,7 +80,7 @@ namespace SimpleWebBrowser
             // 
             this.btnRefresh.Location = new System.Drawing.Point(663, 16);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 21);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@ namespace SimpleWebBrowser
             // 
             this.btnForward.Location = new System.Drawing.Point(582, 16);
             this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(75, 21);
+            this.btnForward.Size = new System.Drawing.Size(75, 23);
             this.btnForward.TabIndex = 4;
             this.btnForward.Text = ">>";
             this.btnForward.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace SimpleWebBrowser
             // 
             this.btnHomePage.Location = new System.Drawing.Point(744, 16);
             this.btnHomePage.Name = "btnHomePage";
-            this.btnHomePage.Size = new System.Drawing.Size(75, 21);
+            this.btnHomePage.Size = new System.Drawing.Size(75, 23);
             this.btnHomePage.TabIndex = 5;
             this.btnHomePage.Text = "Home";
             this.btnHomePage.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@ namespace SimpleWebBrowser
             // 
             this.btnBack.Location = new System.Drawing.Point(501, 16);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 21);
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "<<";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -158,9 +158,9 @@ namespace SimpleWebBrowser
             // 
             // btnNewTab
             // 
-            this.btnNewTab.Location = new System.Drawing.Point(825, 15);
+            this.btnNewTab.Location = new System.Drawing.Point(825, 16);
             this.btnNewTab.Name = "btnNewTab";
-            this.btnNewTab.Size = new System.Drawing.Size(75, 21);
+            this.btnNewTab.Size = new System.Drawing.Size(75, 23);
             this.btnNewTab.TabIndex = 9;
             this.btnNewTab.Text = "New Tab";
             this.btnNewTab.UseVisualStyleBackColor = true;
@@ -168,9 +168,9 @@ namespace SimpleWebBrowser
             // 
             // btnAddFavorite
             // 
-            this.btnAddFavorite.Location = new System.Drawing.Point(906, 15);
+            this.btnAddFavorite.Location = new System.Drawing.Point(906, 16);
             this.btnAddFavorite.Name = "btnAddFavorite";
-            this.btnAddFavorite.Size = new System.Drawing.Size(85, 21);
+            this.btnAddFavorite.Size = new System.Drawing.Size(85, 23);
             this.btnAddFavorite.TabIndex = 10;
             this.btnAddFavorite.Text = "Add bookmark";
             this.btnAddFavorite.UseVisualStyleBackColor = true;
@@ -203,6 +203,7 @@ namespace SimpleWebBrowser
             this.cbBookmarks.Size = new System.Drawing.Size(121, 21);
             this.cbBookmarks.TabIndex = 13;
             this.cbBookmarks.SelectedValueChanged += new System.EventHandler(this.cbBookmarks_SelectedValueChanged);
+            this.cbBookmarks.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbBookmarks_MouseClick);
             // 
             // lblLoginUsername
             // 
