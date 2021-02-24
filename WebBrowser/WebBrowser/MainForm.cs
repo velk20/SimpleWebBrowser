@@ -56,6 +56,8 @@ namespace SimpleWebBrowser
             if (web != null)
             {
                 web.Refresh();
+                tbURL.Text = web.Url.AbsoluteUri;
+                tabControl.SelectedTab.Text = web.DocumentTitle;
             }
         }
         private void btnHomePage_Click(object sender, EventArgs e)
@@ -128,6 +130,7 @@ namespace SimpleWebBrowser
             WebBrowserMain.DocumentCompleted += WebBrowserMain_DocumentCompleted;
             cbBookmarks.Enabled = false;
             btnAddFavorite.Enabled = false;
+            btnLoginRegister.ForeColor = Color.Green;
         }
         private void tabControl_DoubleClick(object sender, EventArgs e)
         {
@@ -177,6 +180,7 @@ namespace SimpleWebBrowser
                 {
                     btnLoginRegister.Text = "Log out";
                     lblLoginUsername.Text = form.currentLoggedUsername;
+                    btnLoginRegister.ForeColor = Color.Red;
                     cbBookmarks.Enabled = true;
                     btnAddFavorite.Enabled = true;
                     LOGED = true;
@@ -192,6 +196,7 @@ namespace SimpleWebBrowser
                 cbBookmarks.Items.Clear();
                 cbBookmarks.Enabled = false;
                 btnAddFavorite.Enabled = false;
+                btnLoginRegister.ForeColor = Color.Green;
                 cbBookmarks.Text = "";
                 onlyOnce = 0;
                 return;
