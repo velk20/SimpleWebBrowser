@@ -126,9 +126,17 @@ namespace SimpleWebBrowser
         }
         private void WebBrowserForm_Load(object sender, EventArgs e)
         {
+            //comments on button when mouse is on it
             toolTip1.ShowAlways = true;
             toolTip1.SetToolTip(btnBack, "Go back");
             toolTip1.SetToolTip(btnForward, "Go forward");
+            toolTip1.SetToolTip(btnHomePage, "Go to your home page");
+            toolTip1.SetToolTip(btnLoginRegister, "If you login to an account you can use Bookmarks functionality!");
+            toolTip1.SetToolTip(btnNewTab, "Add a new tab to your browser");
+            toolTip1.SetToolTip(btnRefresh, "Refresh page");
+            toolTip1.SetToolTip(btnSearch, "Search with URL");
+            
+
             WebBrowserMain.Navigate(homePage);
             WebBrowserMain.DocumentCompleted += WebBrowserMain_DocumentCompleted;
             cbBookmarks.Enabled = false;
