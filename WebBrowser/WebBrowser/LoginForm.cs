@@ -39,7 +39,7 @@ namespace SimpleWebBrowser
             {
                 if (currentUsername == usernames[i] && currentPassword == passwords[i])
                 {
-                    MessageBox.Show("Login success!");
+                    MessageBox.Show("Login success!","You login attempt was successfull!",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     webForm.LOGED = true;
                     currentLoggedUsername = currentUsername;
                     this.Close();
@@ -72,7 +72,7 @@ namespace SimpleWebBrowser
             }
             if (webForm.LOGED == false)
             {
-                MessageBox.Show("Wrong username/password!");
+                MessageBox.Show("Wrong username/password!","Your username or password ar incorrect",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 currentLoggedUsername = "";
             }
         }
@@ -82,14 +82,14 @@ namespace SimpleWebBrowser
             string currentPassword = tbPassword.Text;
             if (usernames.Contains(currentUsername))
             {
-                MessageBox.Show("Username is taken!");
+                MessageBox.Show("Username is taken!","Try to register with different username!",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
             usernames.Add(currentUsername);
             passwords.Add(currentPassword);
             fullInformation.Add(currentUsername + seperator + currentPassword);
             newList.Add(currentUsername + seperator + currentPassword);
-            MessageBox.Show("Registration success!");
+            MessageBox.Show("Registration success!", "You have successful register you account!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             using (FileStream fs = new FileStream(filePath, FileMode.Append))
             {
                 using (StreamWriter writer = new StreamWriter(fs))

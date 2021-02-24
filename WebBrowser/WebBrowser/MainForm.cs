@@ -20,7 +20,6 @@ namespace SimpleWebBrowser
         string homePage = "https://www.google.com";
         public bool LOGED = false;
         List<string> users = new List<string>();
-        string currentLine;
         int onlyOnce = 0;
         public WebBrowserForm()
         {
@@ -86,6 +85,7 @@ namespace SimpleWebBrowser
             try
             {
                 wb.Navigate(new Uri(address));
+                
             }
             catch (System.UriFormatException)
             {
@@ -126,6 +126,8 @@ namespace SimpleWebBrowser
         {
             WebBrowserMain.Navigate(homePage);
             WebBrowserMain.DocumentCompleted += WebBrowserMain_DocumentCompleted;
+            cbBookmarks.Enabled = false;
+            btnAddFavorite.Enabled = false;
         }
         private void tabControl_DoubleClick(object sender, EventArgs e)
         {
@@ -175,6 +177,8 @@ namespace SimpleWebBrowser
                 {
                     btnLoginRegister.Text = "Log out";
                     lblLoginUsername.Text = form.currentLoggedUsername;
+                    cbBookmarks.Enabled = true;
+                    btnAddFavorite.Enabled = true;
                     LOGED = true;
                     return;
                 }
@@ -186,6 +190,8 @@ namespace SimpleWebBrowser
                 lblLoginUsername.Text = "Guest";
                 LOGED = false;
                 cbBookmarks.Items.Clear();
+                cbBookmarks.Enabled = false;
+                btnAddFavorite.Enabled = false;
                 cbBookmarks.Text = "";
                 onlyOnce = 0;
                 return;
@@ -195,9 +201,15 @@ namespace SimpleWebBrowser
         {
             //Get current web browser
             web = tabControl.SelectedTab.Controls[0] as WebBrowser;
-            string cbURL = cbBookmarks.SelectedItem.ToString();
+            string cbURL = cbBookmarks.SelectedItem.ToString().Trim();
             Navigate(cbURL, web);
-            cbBookmarks.Text = "";
+            //!!!!!!!!!!!!!
+            cbBookmarks.Items.Clear();
+            for (int j = 0; j < form.currentUserURLSList.Count; j++)
+            {
+                cbBookmarks.Items.Add(form.currentUserURLSList[j].ToString());
+            }
+
         }
         private void tbURL_KeyPress(object sender, KeyPressEventArgs e)
         {

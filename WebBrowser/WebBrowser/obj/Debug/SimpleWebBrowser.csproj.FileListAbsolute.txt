@@ -20,3 +20,14 @@ C:\Users\angel\Desktop\TEST WEB\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser
 C:\Users\angel\Desktop\TEST WEB\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.csproj.CoreCompileInputs.cache
 C:\Users\angel\Desktop\TEST WEB\WebBrowser\WebBrowser\obj\Debug\WebBrowser.exe
 C:\Users\angel\Desktop\TEST WEB\WebBrowser\WebBrowser\obj\Debug\WebBrowser.pdb
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\bin\Debug\WebBrowser.exe.config
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\bin\Debug\WebBrowser.exe
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\bin\Debug\WebBrowser.pdb
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.csprojAssemblyReference.cache
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.LoginForm.resources
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.WebBrowserForm.resources
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\WebBrowser.Properties.Resources.resources
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.csproj.GenerateResource.cache
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\SimpleWebBrowser.csproj.CoreCompileInputs.cache
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\WebBrowser.exe
+C:\Users\angel\Desktop\WebBrowser\SimpleWebBrowser\WebBrowser\WebBrowser\obj\Debug\WebBrowser.pdb
