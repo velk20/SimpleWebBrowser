@@ -126,6 +126,9 @@ namespace SimpleWebBrowser
         }
         private void WebBrowserForm_Load(object sender, EventArgs e)
         {
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(btnBack, "Go back");
+            toolTip1.SetToolTip(btnForward, "Go forward");
             WebBrowserMain.Navigate(homePage);
             WebBrowserMain.DocumentCompleted += WebBrowserMain_DocumentCompleted;
             cbBookmarks.Enabled = false;
@@ -248,5 +251,6 @@ namespace SimpleWebBrowser
                 MessageBox.Show("You need to log in  to use bookmarks function!", "Need to log in first!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+       
     }
 }

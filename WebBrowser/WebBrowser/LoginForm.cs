@@ -100,6 +100,10 @@ namespace SimpleWebBrowser
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
             using (FileStream fs = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 using (StreamReader reader = new StreamReader(fs))
@@ -116,6 +120,39 @@ namespace SimpleWebBrowser
                     }
                 }
             }
+        }
+
+        private void ValidateInputs(TextBox tb, ErrorProvider ep)
+        {
+            if (tb.Text == "")
+            {
+                ep.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+               
+                ep.Icon = Properties.Resources.iconfinder_sign_error_299045;
+                ep.SetError(tb, "Field is empty!");
+
+                tb.BackColor = Color.Red;
+            }
+            else
+            {
+                ep.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+                ep.Icon = Properties.Resources.iconfinder_Checkmark_1891021;
+                ep.SetError(tb, "Field is empty!");
+
+                tb.BackColor = Color.Green;
+            }
+        }
+
+        private void tbUsername_Validated(object sender, EventArgs e)
+        {
+            ValidateInputs(tbUsername, epUsername);
+        }
+
+       
+
+        private void tbPassword_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateInputs(tbPassword, epPassword);
         }
     }
 }

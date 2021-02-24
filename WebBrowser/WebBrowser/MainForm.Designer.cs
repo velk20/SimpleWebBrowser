@@ -29,6 +29,7 @@ namespace SimpleWebBrowser
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WebBrowserForm));
             this.label1 = new System.Windows.Forms.Label();
             this.tbURL = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@ namespace SimpleWebBrowser
             this.label2 = new System.Windows.Forms.Label();
             this.cbBookmarks = new System.Windows.Forms.ComboBox();
             this.lblLoginUsername = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -133,7 +135,7 @@ namespace SimpleWebBrowser
             this.WebBrowserMain.MinimumSize = new System.Drawing.Size(20, 20);
             this.WebBrowserMain.Name = "WebBrowserMain";
             this.WebBrowserMain.ScriptErrorsSuppressed = true;
-            this.WebBrowserMain.Size = new System.Drawing.Size(1245, 567);
+            this.WebBrowserMain.Size = new System.Drawing.Size(1249, 590);
             this.WebBrowserMain.TabIndex = 7;
             this.WebBrowserMain.Url = new System.Uri("https://www.google.com/", System.UriKind.Absolute);
             this.WebBrowserMain.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowserMain_DocumentCompleted);
@@ -146,10 +148,10 @@ namespace SimpleWebBrowser
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl.Location = new System.Drawing.Point(2, 45);
+            this.tabControl.Location = new System.Drawing.Point(3, 44);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1253, 596);
+            this.tabControl.Size = new System.Drawing.Size(1253, 606);
             this.tabControl.TabIndex = 8;
             this.tabControl.DoubleClick += new System.EventHandler(this.tabControl_DoubleClick);
             this.tabControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl_MouseClick);
@@ -160,7 +162,7 @@ namespace SimpleWebBrowser
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1245, 567);
+            this.tabPage1.Size = new System.Drawing.Size(1245, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -181,7 +183,7 @@ namespace SimpleWebBrowser
             this.btnAddFavorite.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddFavorite.Location = new System.Drawing.Point(906, 16);
             this.btnAddFavorite.Name = "btnAddFavorite";
-            this.btnAddFavorite.Size = new System.Drawing.Size(85, 23);
+            this.btnAddFavorite.Size = new System.Drawing.Size(113, 24);
             this.btnAddFavorite.TabIndex = 10;
             this.btnAddFavorite.Text = "Add bookmark";
             this.btnAddFavorite.UseVisualStyleBackColor = true;
@@ -189,7 +191,7 @@ namespace SimpleWebBrowser
             // 
             // btnLoginRegister
             // 
-            this.btnLoginRegister.Location = new System.Drawing.Point(1142, 25);
+            this.btnLoginRegister.Location = new System.Drawing.Point(1152, 24);
             this.btnLoginRegister.Name = "btnLoginRegister";
             this.btnLoginRegister.Size = new System.Drawing.Size(104, 31);
             this.btnLoginRegister.TabIndex = 11;
@@ -201,7 +203,7 @@ namespace SimpleWebBrowser
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(1023, 9);
+            this.label2.Location = new System.Drawing.Point(1051, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 12;
@@ -211,7 +213,7 @@ namespace SimpleWebBrowser
             // 
             this.cbBookmarks.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbBookmarks.FormattingEnabled = true;
-            this.cbBookmarks.Location = new System.Drawing.Point(997, 25);
+            this.cbBookmarks.Location = new System.Drawing.Point(1025, 17);
             this.cbBookmarks.Name = "cbBookmarks";
             this.cbBookmarks.Size = new System.Drawing.Size(121, 24);
             this.cbBookmarks.TabIndex = 13;
@@ -222,7 +224,7 @@ namespace SimpleWebBrowser
             // 
             this.lblLoginUsername.AutoSize = true;
             this.lblLoginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblLoginUsername.Location = new System.Drawing.Point(1176, 9);
+            this.lblLoginUsername.Location = new System.Drawing.Point(1186, 8);
             this.lblLoginUsername.Name = "lblLoginUsername";
             this.lblLoginUsername.Size = new System.Drawing.Size(40, 13);
             this.lblLoginUsername.TabIndex = 8;
@@ -250,6 +252,7 @@ namespace SimpleWebBrowser
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WebBrowserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple Web Browser";
             this.Load += new System.EventHandler(this.WebBrowserForm_Load);
             this.tabControl.ResumeLayout(false);
@@ -277,6 +280,7 @@ namespace SimpleWebBrowser
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblLoginUsername;
         public System.Windows.Forms.ComboBox cbBookmarks;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
