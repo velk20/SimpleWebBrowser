@@ -39,6 +39,7 @@ namespace SimpleWebBrowser
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@ namespace SimpleWebBrowser
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLogin.Location = new System.Drawing.Point(60, 153);
+            this.btnLogin.Location = new System.Drawing.Point(60, 179);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 24);
             this.btnLogin.TabIndex = 0;
@@ -57,7 +58,7 @@ namespace SimpleWebBrowser
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRegister.Location = new System.Drawing.Point(141, 153);
+            this.btnRegister.Location = new System.Drawing.Point(141, 179);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 24);
             this.btnRegister.TabIndex = 1;
@@ -99,9 +100,9 @@ namespace SimpleWebBrowser
             this.tbPassword.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPassword.Location = new System.Drawing.Point(60, 117);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(156, 21);
             this.tbPassword.TabIndex = 5;
+            this.tbPassword.UseSystemPasswordChar = true;
             this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // epUsername
@@ -112,12 +113,26 @@ namespace SimpleWebBrowser
             // 
             this.epPassword.ContainerControl = this;
             // 
+            // cbShowPassword
+            // 
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbShowPassword.Location = new System.Drawing.Point(60, 144);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(108, 18);
+            this.cbShowPassword.TabIndex = 6;
+            this.cbShowPassword.Text = "Show Password";
+            this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
+            // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(279, 257);
+            this.Controls.Add(this.cbShowPassword);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label2);
@@ -147,5 +162,6 @@ namespace SimpleWebBrowser
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.ErrorProvider epUsername;
         private System.Windows.Forms.ErrorProvider epPassword;
+        private System.Windows.Forms.CheckBox cbShowPassword;
     }
 }

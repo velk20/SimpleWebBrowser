@@ -39,7 +39,7 @@ namespace SimpleWebBrowser
             {
                 if (currentUsername == usernames[i] && currentPassword == passwords[i])
                 {
-                    MessageBox.Show("Login success!","You login attempt was successfull!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Login successful! \n\n You login as "+currentUsername,"Your login attempt was successfull!",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     webForm.LOGED = true;
                     currentLoggedUsername = currentUsername;
                     this.Close();
@@ -72,8 +72,14 @@ namespace SimpleWebBrowser
             }
             if (webForm.LOGED == false)
             {
-                MessageBox.Show("Wrong username/password!","Your username or password ar incorrect",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Wrong username/password!","Your username or password are incorrect",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 currentLoggedUsername = "";
+                tbUsername.Text = "";
+                tbPassword.Text = "";
+                epUsername.Clear();
+                tbUsername.BackColor = default;
+                tbPassword.BackColor = default;
+                epPassword.Clear();
             }
         }
         private void btnRegister_Click(object sender, EventArgs e)
@@ -83,6 +89,8 @@ namespace SimpleWebBrowser
             if (usernames.Contains(currentUsername))
             {
                 MessageBox.Show("Username is taken!","Try to register with different username!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                tbPassword.Text = "";
+                tbUsername.Text = "";
                 return;
             }
             usernames.Add(currentUsername);
@@ -90,6 +98,7 @@ namespace SimpleWebBrowser
             fullInformation.Add(currentUsername + seperator + currentPassword);
             newList.Add(currentUsername + seperator + currentPassword);
             MessageBox.Show("Registration success!", "You have successful register you account!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
             using (FileStream fs = new FileStream(filePath, FileMode.Append))
             {
                 using (StreamWriter writer = new StreamWriter(fs))
@@ -97,6 +106,12 @@ namespace SimpleWebBrowser
                     writer.WriteLine(currentUsername + seperator + currentPassword);
                 }
             }
+            tbUsername.Text = "";
+            tbPassword.Text = "";
+            epUsername.Clear();
+            tbUsername.BackColor = default;
+            tbPassword.BackColor = default;
+            epPassword.Clear();
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -137,7 +152,7 @@ namespace SimpleWebBrowser
             {
                 ep.BlinkStyle = ErrorBlinkStyle.NeverBlink;
                 ep.Icon = Properties.Resources.iconfinder_Checkmark_1891021;
-                ep.SetError(tb, "Field is empty!");
+                ep.SetError(tb, "OK!");
 
                 tb.BackColor = Color.Green;
             }
@@ -153,6 +168,21 @@ namespace SimpleWebBrowser
         private void tbPassword_Validating(object sender, CancelEventArgs e)
         {
             ValidateInputs(tbPassword, epPassword);
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            bool check = cbShowPassword.Checked;
+
+            switch (check)
+            {
+                case true:
+                        tbPassword.UseSystemPasswordChar = false;
+                        break;
+                default:
+                        tbPassword.UseSystemPasswordChar = true;
+                        break;
+            }
         }
     }
 }

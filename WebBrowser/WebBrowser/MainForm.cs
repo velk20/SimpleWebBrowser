@@ -14,12 +14,10 @@ namespace SimpleWebBrowser
     public partial class WebBrowserForm : Form
     {
         TabPage tab = null;
-        WebBrowser addedWebBrowser = null;
         LoginForm form = null;
         WebBrowser web = null;
         string homePage = "https://www.google.com";
         public bool LOGED = false;
-        List<string> users = new List<string>();
         int onlyOnce = 0;
         public WebBrowserForm()
         {
@@ -53,11 +51,12 @@ namespace SimpleWebBrowser
         {
             //Get current web browser
             web = tabControl.SelectedTab.Controls[0] as WebBrowser;
+            tbURL.Text = web.Url.AbsoluteUri;
+            tabControl.SelectedTab.Text = web.DocumentTitle;
             if (web != null)
             {
                 web.Refresh();
-                tbURL.Text = web.Url.AbsoluteUri;
-                tabControl.SelectedTab.Text = web.DocumentTitle;
+                
             }
         }
         private void btnHomePage_Click(object sender, EventArgs e)
@@ -112,18 +111,23 @@ namespace SimpleWebBrowser
             tab.Text = "New Tab";
             tabControl.Controls.Add(tab);
             tabControl.SelectTab(tabControl.TabCount - 1);
-            addedWebBrowser = new WebBrowser()
+            web = new WebBrowser()
             { ScriptErrorsSuppressed = true };
-            addedWebBrowser.Parent = tab;
-            addedWebBrowser.Dock = DockStyle.Fill;
-            addedWebBrowser.Navigate(homePage);
-            addedWebBrowser.DocumentCompleted += AddedWebBrowser_DocumentCompleted;
+            web.Parent = tab;
+            web.Dock = DockStyle.Fill;
+            web.Navigate(homePage);
+            web.DocumentCompleted += Web_DocumentCompleted;
         }
-        private void AddedWebBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+
+        private void Web_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            tabControl.SelectedTab.Text = addedWebBrowser.DocumentTitle;
-            tbURL.Text = addedWebBrowser.Url.AbsoluteUri;
+            web = tabControl.SelectedTab.Controls[0] as WebBrowser;
+
+            tabControl.SelectedTab.Text = web.DocumentTitle;
+            tbURL.Text = web.Url.AbsoluteUri;
         }
+
+       
         private void WebBrowserForm_Load(object sender, EventArgs e)
         {
             //comments on button when mouse is on it
@@ -135,7 +139,6 @@ namespace SimpleWebBrowser
             toolTip1.SetToolTip(btnNewTab, "Add a new tab to your browser");
             toolTip1.SetToolTip(btnRefresh, "Refresh page");
             toolTip1.SetToolTip(btnSearch, "Search with URL");
-            
 
             WebBrowserMain.Navigate(homePage);
             WebBrowserMain.DocumentCompleted += WebBrowserMain_DocumentCompleted;
@@ -219,7 +222,7 @@ namespace SimpleWebBrowser
             web = tabControl.SelectedTab.Controls[0] as WebBrowser;
             string cbURL = cbBookmarks.SelectedItem.ToString().Trim();
             Navigate(cbURL, web);
-            //!!!!!!!!!!!!!
+            
             cbBookmarks.Items.Clear();
             for (int j = 0; j < form.currentUserURLSList.Count; j++)
             {
@@ -256,9 +259,8 @@ namespace SimpleWebBrowser
             }
             if (!LOGED)
             {
-                MessageBox.Show("You need to log in  to use bookmarks function!", "Need to log in first!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You need to log in to use bookmarks function!", "Need to log in first!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-       
     }
 }

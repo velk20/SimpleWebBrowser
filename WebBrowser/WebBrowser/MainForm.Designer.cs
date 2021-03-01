@@ -191,9 +191,10 @@ namespace SimpleWebBrowser
             // 
             // btnLoginRegister
             // 
+            this.btnLoginRegister.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnLoginRegister.Location = new System.Drawing.Point(1152, 24);
             this.btnLoginRegister.Name = "btnLoginRegister";
-            this.btnLoginRegister.Size = new System.Drawing.Size(104, 31);
+            this.btnLoginRegister.Size = new System.Drawing.Size(104, 39);
             this.btnLoginRegister.TabIndex = 11;
             this.btnLoginRegister.Text = "Log in / Register";
             this.btnLoginRegister.UseVisualStyleBackColor = true;
