@@ -69,6 +69,8 @@ namespace SimpleWebBrowser
             this.tbURL.Name = "tbURL";
             this.tbURL.Size = new System.Drawing.Size(328, 22);
             this.tbURL.TabIndex = 1;
+            this.tbURL.Click += new System.EventHandler(this.tbURL_Click);
+            this.tbURL.DoubleClick += new System.EventHandler(this.tbURL_DoubleClick);
             this.tbURL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbURL_KeyPress);
             // 
             // btnSearch

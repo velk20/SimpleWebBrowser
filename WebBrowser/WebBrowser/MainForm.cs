@@ -261,5 +261,15 @@ namespace SimpleWebBrowser
                 MessageBox.Show("You need to log in to use bookmarks function!", "Need to log in first!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void tbURL_DoubleClick(object sender, EventArgs e)
+        {
+            tbURL.SelectAll();
+        }
+
+        private void tbURL_Click(object sender, EventArgs e)
+        {
+            tbURL.Select();
+        }
     }
 }
