@@ -56,7 +56,6 @@ namespace SimpleWebBrowser
             if (web != null)
             {
                 web.Refresh();
-                
             }
         }
         private void btnHomePage_Click(object sender, EventArgs e)
@@ -78,8 +77,7 @@ namespace SimpleWebBrowser
         private void Navigate(String address, WebBrowser wb)
         {
             if (String.IsNullOrEmpty(address)) return;
-            if (!address.StartsWith("http://") &&
-                !address.StartsWith("https://"))
+            if (!address.StartsWith("http://") && !address.StartsWith("https://"))
             {
                 address = "http://" + address.Trim();
             }
@@ -90,6 +88,7 @@ namespace SimpleWebBrowser
             }
             catch (System.UriFormatException)
             {
+                MessageBox.Show("Invalid url!");
                 return;
             }
         }
@@ -136,7 +135,7 @@ namespace SimpleWebBrowser
             toolTip1.SetToolTip(btnForward, "Go forward");
             toolTip1.SetToolTip(btnHomePage, "Go to your home page");
             toolTip1.SetToolTip(btnLoginRegister, "If you login to an account you can use Bookmarks functionality!");
-            toolTip1.SetToolTip(btnNewTab, "Add a new tab to your browser");
+            toolTip1.SetToolTip(btnNewTab, "Add a new tab to your browser\nIf you want to remove tab just double click on the tab!");
             toolTip1.SetToolTip(btnRefresh, "Refresh page");
             toolTip1.SetToolTip(btnSearch, "Search with URL");
 

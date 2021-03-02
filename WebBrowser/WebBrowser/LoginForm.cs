@@ -72,7 +72,7 @@ namespace SimpleWebBrowser
             }
             if (webForm.LOGED == false)
             {
-                MessageBox.Show("Wrong username/password!","Your username or password are incorrect",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Wrong username/password!","Your username or password are incorrect",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 currentLoggedUsername = "";
                 tbUsername.Text = "";
                 tbPassword.Text = "";
@@ -88,9 +88,13 @@ namespace SimpleWebBrowser
             string currentPassword = tbPassword.Text;
             if (usernames.Contains(currentUsername))
             {
-                MessageBox.Show("Username is taken!","Try to register with different username!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Username is taken!","Try to register with different username!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 tbPassword.Text = "";
                 tbUsername.Text = "";
+                epUsername.Clear();
+                epPassword.Clear();
+                tbUsername.BackColor = default;
+                tbPassword.BackColor = default;
                 return;
             }
             usernames.Add(currentUsername);
