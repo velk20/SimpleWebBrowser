@@ -214,6 +214,7 @@ namespace SimpleWebBrowser
             // 
             // cbBookmarks
             // 
+            this.cbBookmarks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBookmarks.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbBookmarks.FormattingEnabled = true;
             this.cbBookmarks.Location = new System.Drawing.Point(1025, 17);
